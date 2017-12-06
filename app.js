@@ -63,8 +63,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//app.use('/', index);
 
+app.use('/', index);
 app.use('/', authController);
 app.use('/skills', skills);
 app.use('/experiences', experiences);
