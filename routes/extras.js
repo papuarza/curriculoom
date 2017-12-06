@@ -110,34 +110,4 @@ router.get('/design/list', function(req, res, next) {
   });
 });
 
-// router.post('/design/new', function(req, res, next) {
-//   console.log(req.body);
-//   res.status(200).json();
-//   // name = req.body.name,
-//   // image = req.body.image || "";
-//   // experiences = req.body.experiences,
-//   // academics = req.body.academics,
-//   // skills = req.body.skills,
-//   // courses = req.body.courses,
-//   // hobbies = req.body.hobbies,
-//   // languages = req.body.languages
-//   //   var newDesign = Design({
-//   //     name,
-//   //     image,
-//   //     experiences,
-//   //     academics,
-//   //     skills,
-//   //     courses,
-//   //     hobbies,
-//   //     languages
-//   //   });
-//   //   newDesign.save((err) => {
-//   //     if (err) {
-//   //       res.status(400).json({ message: "Something went wrong" });
-//   //     } else {
-//   //       res.status(200).json(newDesign);
-//   //     }
-//   //   });
-// });
-
 module.exports = router;

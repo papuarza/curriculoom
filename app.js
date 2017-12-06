@@ -18,7 +18,7 @@ const cors              = require('cors');
 const mongoose          = require("mongoose");
 
 mongoose.connect(process.env.DBURL).then(() =>{
-  console.log(`Connected to DB: ${process.env.DBURL}`);
+  console.log(`Connected to DB: ${process.env.MONGODB_URI}`);
 });
 
 var app = express();
