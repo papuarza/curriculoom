@@ -1,7 +1,6 @@
 
 const express        = require("express");
 const router = express.Router();
-const Pageres = require('pageres');
 
 // Our user model
 const Curriculum           = require("../model/curriculum");
@@ -41,19 +40,6 @@ router.post('/save/:id', function(req, res, next) {
     Curriculum.updateOne({_id: cvId}, {name: name, color: color}, (err, curriculum) => {
         res.status(200).json(curriculum)
     });
-    // const pageres = new Pageres({delay: 5, css: ".vertical-nav-profile{display:none}; .printing{margin:0}", filename: cvId})
-	// .src('localhost:4200/generate-cv/'+cvId, ['1200x768'], {crop: false})
-	// .dest("../public/images/")
-	// .run()
-	// .then(() => {
-    //     previewUrl = "images/"+cvId;
-    //     name = cvId;
-    //     Curriculum.updateOne({_id: cvId}, {name: cvId, preview: previewUrl, color: color}, (err, curriculum) => {
-    //         res.status(200).json(curriculum)
-    //     });
-        
-    // })
-    // .catch(err => console.log(err));
 });
 
 router.post('/add', (req, res, next) => {
