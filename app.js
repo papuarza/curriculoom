@@ -6,9 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const session         = require("express-session");
 const passport        = require("passport");
-
 const MongoStore   = require('connect-mongo')(session);
-
 const authController  = require("./routes/auth-controller");
 var index = require('./routes/index');
 var experiences = require('./routes/experiences');
