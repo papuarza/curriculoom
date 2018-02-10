@@ -3,6 +3,7 @@
 const express        = require("express");
 const authController = express.Router();
 const passport = require("passport");
+const axios = require("axios");
 
 // Our user model
 const User           = require("../model/user");
@@ -113,13 +114,20 @@ authController.post("/login", function(req, res, next) {
   })(req, res, next);
 });
 
+authController.get('/auth/linkedin', function(req, res) {
+
+});
+
+authController.get('/auth/linkedin/callback', function(req, res) {
+  res.status(200).json({'message': 'Papu'});
+});
+
 authController.post("/logout", function(req, res) {
   req.logout();
   res.status(200).json({ message: 'Success' });
 });
 
 authController.get("/loggedin", function(req, res) {
-  console.log(req.isAuthenticated());
   if(req.isAuthenticated()) {
     return res.status(200).json(req.user);
   }
@@ -147,8 +155,6 @@ authController.post('/upload-photo', upload.single('file'), function(req, res) {
     
   })
 });
-
-
 
 
 module.exports = authController;

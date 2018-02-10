@@ -14,10 +14,11 @@ const academics         = require('./routes/academics');
 const skills            = require('./routes/skills');
 const extras            = require('./routes/extras');
 const curriculums       = require('./routes/curriculums');
+const message       = require('./routes/message');
 const cors              = require('cors');
 const mongoose          = require("mongoose");
 
-mongoose.connect(process.env.DBURL).then(() =>{
+mongoose.connect(process.env.MONGODB_URI).then(() =>{
   console.log(`Connected to DB: ${process.env.MONGODB_URI}`);
 });
 
@@ -69,6 +70,7 @@ app.use('/experiences', experiences);
 app.use('/academics', academics);
 app.use('/extras', extras);
 app.use('/curriculums', curriculums);
+app.use('/message', message);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

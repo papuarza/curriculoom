@@ -2,7 +2,6 @@
 const express        = require("express");
 const router = express.Router();
 
-// Our user model
 const Curriculum           = require("../model/curriculum");
 
 /* GET users listing. */
@@ -35,8 +34,7 @@ router.post('/save/:id', function(req, res, next) {
     let cvId = req.body.id;
     let color = req.body.color;
     let preview = "";
-    let name = "";
-    req.body.name !== "SIN TITULO" ? name = req.body.name : name = cvId;
+    let name = req.body.name;
     Curriculum.updateOne({_id: cvId}, {name: name, color: color}, (err, curriculum) => {
         res.status(200).json(curriculum)
     });
